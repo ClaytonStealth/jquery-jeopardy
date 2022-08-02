@@ -1,0 +1,131 @@
+div {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}c
+#title {
+    text-align: center;
+}
+
+#submissionArea{
+    text-align: center;
+}
+
+#submitButton {
+    align-self: center;
+}
+
+#b1-100{
+    color: gold;
+    margin: 7%;
+    grid-area: b1-100;
+}
+#b2-100{
+    color: gold;
+    grid-area: b2-100;
+}
+#b3-100{
+    color: gold;
+    grid-area: b3-100;
+}
+#b4-100{
+    color: gold;
+    grid-area: b4-100;
+}
+#b5-100{
+    color: gold;
+    grid-area: b5-100;
+}
+#b1-200{
+    color: gold;
+    grid-area: b1-200;
+}
+#b2-200{
+    color: gold;
+    grid-area: b2-200;
+}
+#b3-200{
+    color: gold;
+    grid-area: b3-200;
+}
+#b4-200{
+    color: gold;
+    grid-area: b4-200;
+}
+#b5-200{
+    color: gold;
+    grid-area: b5-200;
+}
+#b1-400{
+    color: gold;
+    grid-area: b1-400;
+}
+#b2-400{
+    color: gold;
+    grid-area: b2-400;
+}
+#b3-400{
+    color: gold;
+    grid-area: b3-400;
+}
+#b4-400{
+    color: gold;
+    grid-area: b4-400;
+}
+#b5-400{
+    color: gold;
+    grid-area: b5-400;
+}
+#b1-600{
+    color: gold;
+    grid-area: b1-600;
+}
+#b2-600{
+    color: gold;
+    grid-area: b2-600;
+}
+#b3-600{
+    color: gold;
+    grid-area: b3-600;
+}
+#b4-600{
+    color: gold;
+    grid-area: b4-600;
+}
+#b5-600{
+    color: gold;
+    grid-area: b5-600;
+}
+#b1-800{
+    color: gold;
+    grid-area: b1-800;
+}
+#b2-800{
+    color: gold;
+    grid-area: b2-800;
+}
+#b3-800{
+    color: gold;
+    grid-area: b3-800;
+}
+#b4-800{
+    color: gold;
+    grid-area: b4-800;
+}
+#b5-800{
+    color: gold;
+    grid-area: b5-800;
+}
+
+.jeopardy{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "b1-100 b2-100 b3-100 b4-100 b5-100"
+    "b1-200 b2-200 b3-200 b4-200 b5-200"
+    "b1-400 b2-400 b3-400 b4-400 b5-400"
+    "b1-600 b2-600 b3-600 b4-600 b5-600"
+    "b1-800 b2-800 b3-800 b4-800 b5-800"
+;
+}
