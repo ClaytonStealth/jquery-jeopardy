@@ -1,8 +1,3 @@
-let btn100 = document.querySelectorAll('#oneHunnit div');
-let btn200 = document.querySelectorAll('#twoHunnit div');
-let btn400 = document.querySelectorAll('#fourHunnit div');
-let btn600 = document.querySelectorAll('#sixHunnit div');
-let btn800 = document.querySelectorAll('#eightHunnit div');
 let question = document.querySelector('#question');
 let answer = document.querySelector('#answer');
 let buttonsParentDiv = document.querySelector('.jeopardy');
@@ -21,6 +16,8 @@ let submitButton = document.querySelector('#submitButton')
 let questions = "";
 let score = 0;
 let scoreCtr = 0;
+let scoreBoard = document.querySelector('#score')
+let clicked = false;
 
 
 
@@ -57,7 +54,7 @@ readJeopardyData()
 // $.on('click', () => {})
 
 let rng = (max) => {
-    let result = (Math.ceil(Math.random() * max))
+    let result = (Math.round(Math.random() * max))
 
     return result
 
@@ -74,69 +71,86 @@ buttonsParentDiv.addEventListener('click', function (event) {
     console.log(event.target);//get the element that user clicked inside the div <div>
     let button = event.target;
     console.log(button.innerText);
+    if(clicked === false){
     if (button.innerText === '$100') {
+        clicked = true;
         questions = one100$Questions[oneIndex]
         score = 0;
         console.log("100")
         
-        console.log(one100$Questions[oneIndex])
-        console.log(oneIndex)
-        console.log (score)
-        question.innerText = one100$Questions[oneIndex].question
+        console.log(questions)
+        // console.log(oneIndex)
+        // console.log (score)
+        question.innerText = `Category: ${questions.category}|| ${questions.question}`
         score += 100
-        console.log(score)
+        // console.log(score)
+        button.innerText = '';
     } if (button.innerText === '$200') {
+        clicked = true;
         questions = two200$Questions[twoIndex]
         score = 0;
-        console.log("200")
-        console.log(two200$Questions[twoIndex])
-        console.log(twoIndex)
-        question.innerText = two200$Questions[twoIndex].question
+        // console.log("200")
+        console.log(questions)
+        // console.log(twoIndex)
+        question.innerText = `Category: ${questions.category}|| ${questions.question}`
         score += 200
-        console.log(score)
+        // console.log(score)
+        button.innerText = '';
     } if (button.innerText === '$400') {
+        clicked = true;
         questions = four400$Questions[fourIndex]
         score = 0;
-        console.log("400")
-        console.log(four400$Questions[fourIndex])
-        console.log(fourIndex)
-        question.innerText = four400$Questions[fourIndex].question
+        // console.log("400")
+        console.log(questions)
+        // console.log(fourIndex)
+        question.innerText = `Category: ${questions.category}|| ${questions.question}`
         score += 400
-        console.log(score)
+        // console.log(score)
+        button.innerText = '';
     } if (button.innerText === '$600') {
+        clicked = true;
         questions = six600$Questions[sixIndex]
         score = 0;
-        console.log("600")
-        console.log(six600$Questions[sixIndex])
-        console.log(sixIndex)
-        question.innerText = six600$Questions[sixIndex].question
+        // console.log("600")
+        console.log(questions)
+        // console.log(sixIndex)
+        question.innerText = `Category: ${questions.category}|| ${questions.question}`
         score += 600
-        console.log(score)
+        // console.log(score)
+        button.innerText = '';
     } if (button.innerText === '$800') {
+        clicked = true;
         questions = eight800$Questions[eightIndex]
         score = 0;
-        console.log("800")
-        console.log(eight800$Questions[eightIndex])
-        console.log(eightIndex)
-        question.innerText = eight800$Questions[eightIndex].question
+        // console.log("800")
+        console.log(questions)
+        // console.log(eightIndex)
+        question.innerText = `Category: ${questions.category}|| ${questions.question}`
         score += 800
-        console.log(score)
+        // console.log(score)
+        button.innerText = '';
     }
+}
 })
 
-submitButton.addEventListener('click', () => {
+submitButton.addEventListener('click', (event) => {
+    event.preventDefault();
     console.log(answer.value);
-    console.log()
+    clicked = false;
     if (answer.value === questions.answer) {
         alert('correct')
         question.innerText = 'Question Populates Here';
         answer.value = '';
         scoreCtr+=score
-        console.log(`$${scoreCtr}`)
+        scoreBoard.innerText = `Score: $${scoreCtr}`
+        // console.log(`Score: $${scoreCtr}`)
 
     } else if (answer.value !== questions.answer) {
         alert('Wrong!')
         question.innerText = 'Question populates Here';
-        answer.value = '';
+        scoreCtr-=score
+        scoreBoard.innerText = `Score: $${scoreCtr}`
+        answer.value = ''; 
+        questions = '';
     }
 })
