@@ -20,6 +20,7 @@ let eight800$Questions = [];
 let submitButton = document.querySelector('#submitButton')
 let questions = "";
 let score = 0;
+let scoreCtr = 0;
 
 
 
@@ -66,7 +67,7 @@ let rng = (max) => {
 
 buttonsParentDiv.addEventListener('click', function (event) {
     oneIndex = rng(one100$Questions.length);
-    twoIndex =rng(two200$Questions.length);
+    twoIndex = rng(two200$Questions.length);
     fourIndex = rng(four400$Questions.length);
     sixIndex = rng(six600$Questions.length);
     eightIndex = rng(eight800$Questions.length);
@@ -75,48 +76,67 @@ buttonsParentDiv.addEventListener('click', function (event) {
     console.log(button.innerText);
     if (button.innerText === '$100') {
         questions = one100$Questions[oneIndex]
+        score = 0;
         console.log("100")
+        
         console.log(one100$Questions[oneIndex])
         console.log(oneIndex)
+        console.log (score)
         question.innerText = one100$Questions[oneIndex].question
+        score += 100
+        console.log(score)
     } if (button.innerText === '$200') {
         questions = two200$Questions[twoIndex]
+        score = 0;
         console.log("200")
         console.log(two200$Questions[twoIndex])
         console.log(twoIndex)
         question.innerText = two200$Questions[twoIndex].question
+        score += 200
+        console.log(score)
     } if (button.innerText === '$400') {
         questions = four400$Questions[fourIndex]
+        score = 0;
         console.log("400")
         console.log(four400$Questions[fourIndex])
         console.log(fourIndex)
         question.innerText = four400$Questions[fourIndex].question
+        score += 400
+        console.log(score)
     } if (button.innerText === '$600') {
         questions = six600$Questions[sixIndex]
+        score = 0;
         console.log("600")
         console.log(six600$Questions[sixIndex])
         console.log(sixIndex)
         question.innerText = six600$Questions[sixIndex].question
+        score += 600
+        console.log(score)
     } if (button.innerText === '$800') {
         questions = eight800$Questions[eightIndex]
+        score = 0;
         console.log("800")
         console.log(eight800$Questions[eightIndex])
         console.log(eightIndex)
         question.innerText = eight800$Questions[eightIndex].question
-        console.log
+        score += 800
+        console.log(score)
     }
 })
 
 submitButton.addEventListener('click', () => {
     console.log(answer.value);
     console.log()
-if(answer.value === questions.answer ){
-    alert('correct')
-    question.innerText = 'Question Populates Here';
-    answer.value = '';
-} else if(answer.value !== questions.answer){
-    alert('Wrong!')
-    question.innerText = 'Question populates Here';
-    answer.value = '';
-}
+    if (answer.value === questions.answer) {
+        alert('correct')
+        question.innerText = 'Question Populates Here';
+        answer.value = '';
+        scoreCtr+=score
+        console.log(`$${scoreCtr}`)
+
+    } else if (answer.value !== questions.answer) {
+        alert('Wrong!')
+        question.innerText = 'Question populates Here';
+        answer.value = '';
+    }
 })
