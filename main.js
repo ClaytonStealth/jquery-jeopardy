@@ -76,58 +76,57 @@ buttonsParentDiv.addEventListener('click', function (event) {
         clicked = true;
         questions = one100$Questions[oneIndex]
         score = 0;
-        console.log("100")
-        
+       
         console.log(questions)
-        // console.log(oneIndex)
-        // console.log (score)
+       
+        
         question.innerText = `Category: ${questions.category}|| ${questions.question}`
         score += 100
-        // console.log(score)
+        
         button.innerText = '';
     } if (button.innerText === '$200') {
         clicked = true;
         questions = two200$Questions[twoIndex]
         score = 0;
-        // console.log("200")
+        
         console.log(questions)
-        // console.log(twoIndex)
+        
         question.innerText = `Category: ${questions.category}|| ${questions.question}`
         score += 200
-        // console.log(score)
+       
         button.innerText = '';
     } if (button.innerText === '$400') {
         clicked = true;
         questions = four400$Questions[fourIndex]
         score = 0;
-        // console.log("400")
+        
         console.log(questions)
-        // console.log(fourIndex)
+        
         question.innerText = `Category: ${questions.category}|| ${questions.question}`
         score += 400
-        // console.log(score)
+       
         button.innerText = '';
     } if (button.innerText === '$600') {
         clicked = true;
         questions = six600$Questions[sixIndex]
         score = 0;
-        // console.log("600")
+        
         console.log(questions)
-        // console.log(sixIndex)
+        
         question.innerText = `Category: ${questions.category}|| ${questions.question}`
         score += 600
-        // console.log(score)
+        
         button.innerText = '';
     } if (button.innerText === '$800') {
         clicked = true;
         questions = eight800$Questions[eightIndex]
         score = 0;
-        // console.log("800")
+        
         console.log(questions)
-        // console.log(eightIndex)
+        
         question.innerText = `Category: ${questions.category}|| ${questions.question}`
         score += 800
-        // console.log(score)
+        
         button.innerText = '';
     }
 }
@@ -135,7 +134,7 @@ buttonsParentDiv.addEventListener('click', function (event) {
 
 submitButton.addEventListener('click', (event) => {
     event.preventDefault();
-    console.log(answer.value);
+    // console.log(answer.value);
     clicked = false;
     if (answer.value === questions.answer) {
         alert('correct')
